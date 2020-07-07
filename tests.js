@@ -52,7 +52,8 @@ describe("Bank information",function(){
         assert.equal(bankInfo.addCheckingAccount(500),JSON.stringify({account : new CheckingAccount(1000045,500)}));
         assert.equal(bankInfo.closeAccount(1000013),2);
         assert.equal(bankInfo.endOfMonth()," Interest Added, Saving Account Added 1000013: balance 410 Warning, low balance CheckingAccount 1000045: balance :400 overdraft limit 500");
-        assert.equal(bankInfo.accountReport(),"Account 100001: balance 400 Saving Account1000013:has balance of400 CheckingAccount1000045: balance of:400")
+        assert.equal(bankInfo.accountReport(),"Account 100001: balance 800 Saving Account1000013:has balance of810 CheckingAccount1000045: balance of:800")
+
         
         
     })
