@@ -48,10 +48,12 @@ describe("Bank information",function(){
 
     it("Performs all of the Bank report" , () =>{
         assert.equal(bankInfo.addAccount(),JSON.stringify({account : new Account(100001)}));
-        assert.equal(bankInfo.addSavingsAccount(2.5),JSON.stringify({saving : new SavingAccount(1000013,2.5)}));
-        assert.equal(bankInfo.addCheckingAccount(500),JSON.stringify({checking : new CheckingAccount(1000045,500)}));
+        assert.equal(bankInfo.addSavingsAccount(2.5),JSON.stringify({account : new SavingAccount(1000013,2.5)}));
+        assert.equal(bankInfo.addCheckingAccount(500),JSON.stringify({account : new CheckingAccount(1000045,500)}));
         assert.equal(bankInfo.closeAccount(1000013),2);
-        // assert.equal(bankInfo.endOfMonth());
-        // assert.equal(bankInfo.accountReport());
+        assert.equal(bankInfo.endOfMonth()," Interest Added, Saving Account Added 1000013: balance 410 Warning, low balance CheckingAccount 1000045: balance :400 overdraft limit 500");
+        assert.equal(bankInfo.accountReport(),"Account 100001: balance 400 Saving Account1000013:has balance of400 CheckingAccount1000045: balance of:400")
+        
+        
     })
 })
