@@ -43,10 +43,6 @@ class Bank {
            
             var a = arrayItem._number ;
             if(a == number) this.accounts.splice(0,1)
-            var s = arrayItem._number ;
-            if(s == number) this.accounts.splice(1,1)
-            var ck = arrayItem._number ;
-            if(ck == number) this.accounts.splice(2,1)
             
             
             
