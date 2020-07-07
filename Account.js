@@ -47,6 +47,10 @@ class Account {
         }
         this._balance += amount;
     }
+    endOfMonth() {
+
+        return "";
+    }
 
     /**
      * Method to take money out of the account
