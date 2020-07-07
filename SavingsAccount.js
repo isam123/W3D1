@@ -42,4 +42,3 @@ class SavingAccount extends Account {
     }
     
     }
-}

@@ -32,7 +32,7 @@ describe("Checking Accounts",function(){
 
     it("Performs all of the Checkingaccount operations" , () =>{
         assert.equal(checking.withdraw(3100),-100);
-        assert.equal(saving.getBalance(),-100);
+        assert.equal(checking.getBalance(),-100);
     })
 })
 
@@ -41,13 +41,16 @@ describe("Checking Accounts",function(){
 describe("Bank information",function(){
 
   
-    let checking = new Bank();
-    checking.deposit(3000);
+    let bankInfo = new Bank();
+ 
     // console.log(checking.withdraw(3100))
    
 
-    it("Performs all of the Checkingaccount operations" , () =>{
-        assert.equal(checking.withdraw(3100),-100);
-        assert.equal(saving.getBalance(),-100);
+    it("Performs all of the Bank report" , () =>{
+        assert.equal(bankInfo.addAccount(),JSON.stringify({account : new Account(100001)}));
+        assert.equal(bankInfo.addSavingsAccount(2.5),JSON.stringify({saving : new SavingAccount(1000013,2.5)}));
+        assert.equal(bankInfo.addCheckingAccount(500),JSON.stringify({checking : new CheckingAccount(1000045,500)}));
+        assert.equal(bankInfo.closeAccount(1000013),2);
+        // assert.equal(bankInfo.endOfMonth(),-100);
     })
 })
