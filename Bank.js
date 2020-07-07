@@ -63,13 +63,16 @@ class Bank {
         return report;
    }
 
-    endOfMonth()  {
+     endOfMonth()  {
         let monthRep = "";
-        for (const key in this.accounts) {
-            // console.log(key.endOfMonth())
-            report+=key.endOfMonth();
-        } 
-        return monthRep;
+        this.accounts.forEach((item) =>{
+            item.account.deposit(400);
+           monthRep+= item.account.endOfMonth();
+
+        });
+        
+    
+    return monthRep;
     }
 
 }
