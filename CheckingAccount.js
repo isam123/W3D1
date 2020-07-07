@@ -44,9 +44,9 @@ class CheckingAccount extends Account {
 
     endOfMonth() {
 
-        if(this.getBalance() <0) {
-        return "Warning, low balance CheckingAccount"+
-        this.getNumber()+": balance :"+this.getBalance()+"overdraft limit"+this.overdraft;
+        if(this.getBalance() >0) {
+        return " Warning, low balance CheckingAccount "+
+        this.getNumber()+": balance :"+this.getBalance()+" overdraft limit "+this.overdraft;
     }
     }
 }
