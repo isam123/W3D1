@@ -38,7 +38,7 @@ class SavingAccount extends Account {
     endOfMonth() {
 
         this.addInterest();
-        return "Interest Added, Saving Account Added" + this._number + ": balance " + this._balance;
+        return " Interest Added, Saving Account Added " + this._number + ": balance " + this._balance;
     }
     
     }
