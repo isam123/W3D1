@@ -51,6 +51,7 @@ describe("Bank information",function(){
         assert.equal(bankInfo.addSavingsAccount(2.5),JSON.stringify({saving : new SavingAccount(1000013,2.5)}));
         assert.equal(bankInfo.addCheckingAccount(500),JSON.stringify({checking : new CheckingAccount(1000045,500)}));
         assert.equal(bankInfo.closeAccount(1000013),2);
-        // assert.equal(bankInfo.endOfMonth(),-100);
+        // assert.equal(bankInfo.endOfMonth());
+        // assert.equal(bankInfo.accountReport());
     })
 })
