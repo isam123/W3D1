@@ -13,7 +13,6 @@ class Bank {
 
     static nextNumber = 0;
     accounts=[];
-    // constructor(accounts) {this.accounts = accounts}
 
     addAccount() {
         this.accounts.push({account : new Account(100001)})
@@ -25,7 +24,7 @@ class Bank {
     }
 
     addSavingsAccount(interest) {
-        this.accounts.push({saving : new SavingAccount(1000013,interest)})
+        this.accounts.push({account : new SavingAccount(1000013,interest)})
         return JSON.stringify(this.accounts[1]);
 
     }
@@ -33,37 +32,36 @@ class Bank {
 
     addCheckingAccount(overdraft){
 
-         this.accounts.push({checking : new CheckingAccount(1000045,overdraft)})
+         this.accounts.push({account : new CheckingAccount(1000045,overdraft)})
         return JSON.stringify(this.accounts[2]);
     }
 
     closeAccount(number) {
-
-           this.accounts.forEach(function (arrayItem) {
-           
-            var a = arrayItem._number ;
-            if(a == number) this.accounts.splice(0,1)
-            
-            
+ 
+          var filterD=   this.accounts.filter(function (arrayItem) {
+                
+                return arrayItem.account._number!=number
             
         })
                
 
-            return this.accounts.length;
+            return filterD.length;
     }
 
 
     accountReport() {
 
         let report = "";
-        for (const key in object) {
-            // console.log(key.toString());
-            report+= key.toString()
-        } 
+        this.accounts.forEach((item) =>{
+            item.account.deposit(400);
+            report+= item.account.toString();
+            console.log(report)
+        });
+        console.log(report)
         return report;
    }
 
-     endOfMonth()  {
+    endOfMonth()  {
         let monthRep = "";
         this.accounts.forEach((item) =>{
             item.account.deposit(400);
@@ -74,5 +72,4 @@ class Bank {
     
     return monthRep;
     }
-
 }
